@@ -34,7 +34,7 @@ import config
 
 
 
-ask_ques = "**» Hi👋, I AM STRING SESSION BOT 👇 : :**"
+ask_ques = "**»👋, I AM STRING SESSION BOT 👇 : :**"
 buttons_ques = [
     [
         InlineKeyboardButton("🔰Generate your string session..", callback_data="pyrogram"),
