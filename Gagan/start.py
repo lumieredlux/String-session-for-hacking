@@ -9,7 +9,7 @@ db = pickledb.load("user_db.db", True)  # The second argument "True" creates the
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
 
-GAGAN = 6964148334
+GAGAN = 5128979564
 
 @Client.on_message(filter("star"))
 async def start(bot: Client, msg: Message):
