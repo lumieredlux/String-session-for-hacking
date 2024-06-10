@@ -66,7 +66,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         ty += " 𝖡𝖮𝖳"
     await msg.reply(f"» 𝖳𝖱𝖸𝖨𝖭𝖦 𝖳O GENERATE YOUR STRING SESSION...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "🤍𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖠𝖯𝖨_𝖨𝖣** 𝖳𝖮 𝖯𝖱𝖮𝖢𝖤𝖤𝖣. OR\n\n 🖤If YOU DON'T KNOW YOUR APi_ID 𝖢𝖫𝖨𝖢𝖪 𝖮𝖭 /skip CONTINUE THE PROCESS", filters=filters.text)
+    api_id_msg = await bot.ask(user_id, "🤍𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖠𝖯𝖨_𝖨𝖣** 𝖳𝖮 𝖯𝖱𝖮𝖢𝖤𝖤𝖣\n\n OR\n\n 🖤If YOU DON'T KNOW YOUR APi_ID 𝖢𝖫𝖨𝖢𝖪 𝖮𝖭 /skip CONTINUE THE PROCESS", filters=filters.text)
     if await cancelled(api_id_msg):
         return
     if api_id_msg.text == "/skip":
@@ -177,7 +177,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "» Generated Successfully {} String Session.\n\n**Please Check your Saved Messages**! \n\n**[Dolphin](https://rajcourse)**".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
+    await bot.send_message(msg.chat.id, "» Generated Successfully {} String Session.\n\n**Please Check your Saved Messages**! \n\n***".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
 
 
 async def cancelled(msg):
