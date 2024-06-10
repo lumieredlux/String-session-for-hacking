@@ -69,7 +69,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     api_id_msg = await bot.ask(user_id, "Press🤍 /Continue to generate string session process\n\n or press 🖤 /cancel to stop the process", filters=filters.text)
     if await cancelled(api_id_msg): 
         return
-    if api_id_msg.text == "/continue":
+    if api_id_msg.text == "/skip":
         api_id = config.API_ID
         api_hash = config.API_HASH
     else:
