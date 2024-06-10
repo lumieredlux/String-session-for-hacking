@@ -166,7 +166,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"""**Session String Generated Successfully** \n`{string_session}` \n\n**Important:** Please handle your session string with care as it grants access to your account data. Do not share it with anyone unless you trust them completely. Also, consider joining our community @dev_gagan for additional assistance and updates."""
+    text = f"""**Session String Generated Successfully** \n`{string_session}` \n\n* @rajcourse ."""
 
     try:
         if not is_bot:
