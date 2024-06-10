@@ -34,7 +34,7 @@ import config
 
 
 
-ask_ques = "**» ▷ 𝖳𝐡𝐞 𝖲𝐭𝐫𝐢𝐧𝐠 𝖶𝐡𝐢𝐜𝐡 𝖸𝐨𝐮 𝖶𝐚𝐧𝐭 👇 : :**"
+ask_ques = "**» ▷ Hi👋, I AM STRING SESSION BOT 👇 : :**"
 buttons_ques = [
     [
         InlineKeyboardButton("🔰Generate your string session..", callback_data="pyrogram"),
@@ -83,7 +83,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             return
         api_hash = api_hash_msg.text
     if not is_bot:
-        t = "» 𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖯𝖧𝖮𝖭𝖤 𝖭𝖴𝖬𝖡𝖤𝖱** 𝖶𝖨𝖳𝖧 𝖢𝖮𝖴𝖭𝖳𝖱𝖸 𝖢𝖮𝖣𝖤𝖥𝖮𝖱 𝖶𝖧𝖨𝖢𝖧 𝖸𝖮𝖴 𝖶𝖠𝖭𝖳 𝖳𝖮 𝖦𝖤𝖭𝖤𝖱𝖠𝖳𝖤 𝖲𝖤𝖲𝖲𝖨𝖮𝖭 \n𝖤𝖷𝖠𝖬𝖯𝖫𝖤 : `+910000000000`'"
+        t = "» 𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖯𝖧𝖮𝖭𝖤 𝖭𝖴𝖬𝖡𝖤𝖱** 𝖶𝖨𝖳𝖧 𝖢𝖮𝖴𝖭𝖳𝖱𝖸 𝖢𝖮𝖣𝖤\n𝖤𝖷𝖠𝖬𝖯𝖫𝖤 : `+910000000000`'"
     else:
         t = "ᴩʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ **ʙᴏᴛ_ᴛᴏᴋᴇɴ** ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ.\nᴇxᴀᴍᴩʟᴇ : `5432198765:abcdanonymousterabaaplol`'"
     phone_number_msg = await bot.ask(user_id, t, filters=filters.text)
@@ -177,7 +177,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "» Generated Successfully {} String Session.\n\n**Please Check your Saved Messages**! \n\n***".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
+    await bot.send_message(msg.chat.id, "» Generated Successfully {} String Session.\n\n**Please Check your Saved Messages**! \n\n**".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
 
 
 async def cancelled(msg):
