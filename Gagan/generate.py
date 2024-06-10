@@ -50,7 +50,7 @@ gen_button = [
 
 
 
-@Client.on_message(filters.private & ~filters.forwarded & filters.command(["raj", "gen", "string", "start"]))
+@Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "start"]))
 async def main(_, msg):
     await msg.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
 
@@ -66,10 +66,10 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         ty += " 𝖡𝖮𝖳"
     await msg.reply(f"» Generate your string session here🔰...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "Use this Command for generate string session 🖤 /generate .", filters=filters.text)
+    api_id_msg = await bot.ask(user_id, "Press /Continue to generate string session\n\n or /cancel ", filters=filters.text)
     if await cancelled(api_id_msg):
         return
-    if api_id_msg.text == "/skip":
+    if api_id_msg.text == "/continue":
         api_id = config.API_ID
         api_hash = config.API_HASH
     else:
