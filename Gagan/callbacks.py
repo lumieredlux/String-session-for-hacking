@@ -36,4 +36,4 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
 
 
 ERROR_MESSAGE = "**ᴇʀʀᴏʀ** : {} " \
-            "\n\n**Contact @dev_gagan for help** !"
+            "\n\n**Contact @rajcourse for help** !"
