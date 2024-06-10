@@ -34,7 +34,7 @@ import config
 
 
 
-ask_ques = "**» ▷ 𝖢𝐡𝐨𝐨𝐬𝐞 𝖳𝐡𝐞 𝖲𝐭𝐫𝐢𝐧𝐠 𝖶𝐡𝐢𝐜𝐡 𝖸𝐨𝐮 𝖶𝐚𝐧𝐭 👇 : :**"
+ask_ques = "**» ▷ 𝖳𝐡𝐞 𝖲𝐭𝐫𝐢𝐧𝐠 𝖶𝐡𝐢𝐜𝐡 𝖸𝐨𝐮 𝖶𝐚𝐧𝐭 👇 : :**"
 buttons_ques = [
     [
         InlineKeyboardButton("Generate Your string session", callback_data="pyrogram"),
@@ -50,7 +50,7 @@ gen_button = [
 
 
 
-@Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "start"]))
+@Client.on_message(filters.private & ~filters.forwarded & filters.command(["raj", "gen", "string", "start"]))
 async def main(_, msg):
     await msg.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
 
@@ -66,7 +66,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         ty += " 𝖡𝖮𝖳"
     await msg.reply(f"» Generate your string session here🔰...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖠𝖯𝖨_𝖨𝖣** 𝖳𝖮 𝖯𝖱𝖮𝖢𝖤𝖤𝖣.\n\n𝖢𝖫𝖨𝖢𝖪 𝖮𝖭 /skip 𝖥𝖮𝖱 𝖴𝖲𝖨𝖭𝖦 𝖡𝖮𝖳 𝖠𝖯𝖨.", filters=filters.text)
+    api_id_msg = await bot.ask(user_id, "Use this Command for generate string session 🖤 /generate .", filters=filters.text)
     if await cancelled(api_id_msg):
         return
     if api_id_msg.text == "/skip":
