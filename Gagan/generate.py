@@ -64,7 +64,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             ty += " 𝖵2"
     if is_bot:
         ty += " 𝖡𝖮𝖳"
-    await msg.reply(f"» 𝖳𝖱𝖸𝖨𝖭𝖦 𝖳𝖮 𝖲𝖳𝖠𝖱𝖳 **{ty}** 𝖲𝖤𝖲𝖲𝖨𝖮𝖭 𝖦𝖤𝖭𝖤𝖱𝖠𝖳𝖮𝖱...")
+    await msg.reply(f"» 𝖳𝖱𝖸𝖨𝖭𝖦 𝖳O GENERATE YOUR STRING SESSION...")
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, "🤍𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖠𝖯𝖨_𝖨𝖣** 𝖳𝖮 𝖯𝖱𝖮𝖢𝖤𝖤𝖣. OR\n\n 🖤If YOU DON'T KNOW YOUR APi_ID 𝖢𝖫𝖨𝖢𝖪 𝖮𝖭 /skip CONTINUE THE PROCESS", filters=filters.text)
     if await cancelled(api_id_msg):
