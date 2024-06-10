@@ -37,15 +37,7 @@ import config
 ask_ques = "**» ▷ 𝖢𝐡𝐨𝐨𝐬𝐞 𝖳𝐡𝐞 𝖲𝐭𝐫𝐢𝐧𝐠 𝖶𝐡𝐢𝐜𝐡 𝖸𝐨𝐮 𝖶𝐚𝐧𝐭 👇 : :**"
 buttons_ques = [
     [
-        InlineKeyboardButton("𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬", callback_data="pyrogram1"),
-        InlineKeyboardButton("𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬 𝖵2", callback_data="pyrogram"),
-    ],
-    [
-        InlineKeyboardButton("𝖳𝖤𝖫𝖤𝖳𝖧𝖮𝖭", callback_data="telethon"),
-    ],
-    [
-        InlineKeyboardButton("𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬 𝖡𝖮𝖳", callback_data="pyrogram_bot"),
-        InlineKeyboardButton("𝖳𝖤𝖫𝖤𝖳𝖧𝖮𝖭 𝖡𝖮𝖳", callback_data="telethon_bot"),
+        InlineKeyboardButton("Generate Your string session", callback_data="pyrogram"),
     ],
 ]
 
