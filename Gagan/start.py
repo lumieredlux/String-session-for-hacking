@@ -11,7 +11,7 @@ def filter(cmd: str):
 
 GAGAN = 6964148334
 
-@Client.on_message(filter("start"))
+@Client.on_message(filter("star"))
 async def start(bot: Client, msg: Message):
     me2 = (await bot.get_me()).mention
     user_id = msg.from_user.id
