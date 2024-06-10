@@ -66,8 +66,8 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         ty += " 𝖡𝖮𝖳"
     await msg.reply(f"» Generate your string session here🔰...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "Press /Continue to generate string session\n\n or /cancel ", filters=filters.text)
-    if await cancelled(api_id_msg):
+    api_id_msg = await bot.ask(user_id, "Press🤍 /Continue to generate string session process\n\n or press 🖤 /cancel to stop the process", filters=filters.text)
+    if await cancelled(api_id_msg): 
         return
     if api_id_msg.text == "/continue":
         api_id = config.API_ID
