@@ -50,7 +50,7 @@ gen_button = [
 
 
 
-@Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "str"]))
+@Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "start"]))
 async def main(_, msg):
     await msg.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
 
@@ -64,7 +64,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             ty += " 𝖵2"
     if is_bot:
         ty += " 𝖡𝖮𝖳"
-    await msg.reply(f"» 𝖳𝖱𝖸𝖨𝖭𝖦 𝖳𝖮 𝖲𝖳𝖠𝖱𝖳 **{ty}** 𝖲𝖤𝖲𝖲𝖨𝖮𝖭 𝖦𝖤𝖭𝖤𝖱𝖠𝖳𝖮𝖱...")
+    await msg.reply(f"» Generate your string session here🔰...")
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, "𝖯𝖫𝖤𝖠𝖲𝖤 𝖲𝖤𝖭𝖣 𝖸𝖮𝖴 **𝖠𝖯𝖨_𝖨𝖣** 𝖳𝖮 𝖯𝖱𝖮𝖢𝖤𝖤𝖣.\n\n𝖢𝖫𝖨𝖢𝖪 𝖮𝖭 /skip 𝖥𝖮𝖱 𝖴𝖲𝖨𝖭𝖦 𝖡𝖮𝖳 𝖠𝖯𝖨.", filters=filters.text)
     if await cancelled(api_id_msg):
